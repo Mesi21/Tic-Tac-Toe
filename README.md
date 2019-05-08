@@ -1,4 +1,4 @@
-Tic-Tac_Toe Game  - version: Command line 
+Tic-Tac-Toe Game  - version: Command line 
 ==========================================
 This project is about recreating the Tic-Tac-Toe game.
 ---
