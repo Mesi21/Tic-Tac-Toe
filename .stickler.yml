@@ -1,2 +1,3 @@
 linters:
-  stylelint:
+  rubocop:
+    display_cop_names: true
