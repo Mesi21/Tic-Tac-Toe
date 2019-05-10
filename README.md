@@ -13,7 +13,7 @@ RULES FOR TIC-TAC-TOE - from (https://www.exploratorium.edu/brain_explorer/ticta
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 ---
 ---
-_Made in Ruby_
+_Created using Ruby_
 ---
 ##Contributor:
 	[Molnar Emese](https://github.com/Mesi21),
