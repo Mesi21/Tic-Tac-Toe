@@ -1,9 +1,8 @@
 require_relative "../lib/board.rb"
 class Game
-  attr_reader :player_1, :player_2 
-  attr_accessor :turns, :game_board
+  attr_reader :player_1, :player_2,:turns, :game_board
   def initialize(player_1, player_2, board)
-      @turns = 1
+      @turn = 1
       @game_board = board
       @player_1 = player_1
       @player_2 = player_2
@@ -11,6 +10,7 @@ class Game
   def start
     until (over? || @game_board.full?)
       @turn == 1 ? play(@player_1) : play(@player_2)
+      next if over?
       @turn = @turn == 1 ? 0 : 1
     end
     game_end
@@ -36,7 +36,7 @@ class Game
   end
   def over?
     if win?
-      if @turns == 1 
+      if @turn == 1
         @player_1.name
       else
         @player_2.name
