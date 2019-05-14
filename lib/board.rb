@@ -1,13 +1,17 @@
+require_relative "../lib/ui.rb"
 class Board
-    attr_accessor :board
+    attr_reader :board
     def initialize(board)
         @board = board
     end
-    def display_board
-        puts " #{@board[0]} ┃ #{@board[1]} ┃ #{@board[2]}"
-        puts "━━━╋━━━╋━━━"
-        puts " #{@board[3]} ┃ #{@board[4]} ┃ #{@board[5]}"
-        puts "━━━╋━━━╋━━━"
-        puts " #{@board[6]} ┃ #{@board[7]} ┃ #{@board[8]}"
+    include UserInterface
+    def full?
+       @board.all? { |a| a.is_a? String }
+    end
+    def is_valid?(index)
+        @board[index].is_a? Integer
+    end
+    def fill_pos(pos, symbol)
+        @board[pos] = symbol
     end
 end
