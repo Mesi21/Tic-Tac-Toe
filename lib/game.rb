@@ -1,6 +1,6 @@
 require_relative "../lib/board.rb"
 class Game
-  attr_reader :player_1, :player_2,:turns, :game_board
+  attr_reader :player_1, :player_2,:turn, :game_board
   def initialize(player_1, player_2, board)
       @turn = 1
       @game_board = board
