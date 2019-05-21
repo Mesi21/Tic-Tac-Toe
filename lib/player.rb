@@ -1,4 +1,3 @@
-require_relative "../lib/ui.rb"
 class Player
     attr_reader :name, :symbol, :moves
     def initialize(name, symbol)
@@ -6,5 +5,8 @@ class Player
         @symbol = symbol
         @moves = []
     end
-    include UserInterface
+    def update(choice,board)
+        moves << choice
+        board.fields[choice] = symbol
+    end
 end

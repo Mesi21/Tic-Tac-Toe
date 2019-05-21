@@ -1,17 +1,16 @@
-require_relative "../lib/ui.rb"
 class Board
-    attr_reader :board
-    def initialize(board)
-        @board = board
+    attr_accessor :fields
+    def initialize
+        @fields = (1..9).to_a
     end
-    include UserInterface
     def full?
-       @board.all? { |a| a.is_a? String }
+       fields.all? { |a| a.is_a? String }
     end
-    def is_valid?(index)
-        @board[index].is_a? Integer
+    def is_free?(choice)
+       fields[choice].is_a? Integer
     end
-    def fill_pos(pos, symbol)
-        @board[pos] = symbol
+    def win?(moves)
+        lines = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7] ]
+        (moves.combination(3).to_a & lines).length > 0
     end
 end

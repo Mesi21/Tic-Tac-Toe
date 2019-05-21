@@ -3,7 +3,7 @@ require_relative "../lib/game"
 require_relative "../lib/board"
 
 def create_player(player_symbol)
-  puts "Enter a player who wish to choose #{player_symbol}:"
+  puts "Enter the name of the player who wishes to choose #{player_symbol}:"
   name = gets.chomp
   Player.new(name, player_symbol)
 end
@@ -11,9 +11,9 @@ def setup
   player_1 = create_player("X")
   player_2 = create_player("O")
   puts "*************************************"
-  board = Board.new([1, 2, 3, 4, 5, 6, 7, 8, 9])
+  board = Board.new
   game = Game.new(player_1, player_2, board)
-  game.start
+  game.cycle
 end
 puts "======================================="
 puts "*** Welcome to our Tic-Tac-Toe Game ***"
