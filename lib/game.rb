@@ -1,33 +1,43 @@
 require_relative "../lib/ui.rb"
 class Game
-  attr_reader :player_1, :player_2, :board, :turn
+  attr_reader :player_1, :player_2, :board
   def initialize(player_1, player_2, board)
       @board = board
       @player_1 = player_1
       @player_2 = player_2
-      @turn = 1
   end
+
   include UserInterface
+
   def cycle
+    symbol = "X"
     while !game_over?
       display_board
-      turn == 1 ? play(player_1) : play(player_2)
-      if turn == 1
-        turn = 0
+      if symbol =="X"
+        won = switch_players(player_1)
+        break if won ==1
+        symbol = "O"
       else
-        turn = 1
+        won = switch_players(player_2)
+        break if won ==1
+        symbol = "X"
       end
-      puts turn
-      change_turns
     end
-    puts "Game over! It's a tie!" if game_over?
+    is_draw
   end
 
   private
+
+  def switch_players(player)
+    play(player)
+    if board.win?(player.moves)
+      display_winner(player.name)
+      return 1
+    end
+    0
+  end
+
   def game_over?
     board.full?
-  end
-  def change_turns
-   
   end
 end

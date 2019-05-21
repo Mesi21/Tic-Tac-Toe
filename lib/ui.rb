@@ -6,6 +6,7 @@ module UserInterface
         puts "━━━╋━━━╋━━━"
         puts " #{board.fields[6]} ┃ #{board.fields[7]} ┃ #{board.fields[8]}"
     end
+
     def play(current_player)
       loop do
         puts "#{current_player.name} enter your move"
@@ -21,11 +22,15 @@ module UserInterface
           puts 'Enter a valid number'
         end
       end
-      if board.win?(current_player.moves)
-        display_winner
-      end
-    end  
-    def display_winner
-      puts "#{current_player.name} has won!"
+      true
+    end
+
+    def display_winner(player_name)
+      display_board
+      puts "#{player_name} has won!"
+    end
+
+    def is_draw
+       puts "Game over! It's a tie!" if game_over?
     end
 end
