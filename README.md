@@ -1,6 +1,8 @@
+<img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+
 Tic-Tac-Toe Game  - version: Command line 
 ==========================================
-This project is about recreating the Tic-Tac-Toe game.
+This project is about recreating the Tic-Tac-Toe game. There are two players who play against one-another two get three of their own marks in a row.
 ---
 RULES FOR TIC-TAC-TOE - from (https://www.exploratorium.edu/brain_explorer/tictactoe.html)
 
@@ -12,9 +14,12 @@ RULES FOR TIC-TAC-TOE - from (https://www.exploratorium.edu/brain_explorer/ticta
 
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 ---
----
-_Created using Ruby_
----
-##Contributor:
+
+## Technical Tools:
+- Ruby
+
+## Contributors:
 	[Molnar Emese](https://github.com/Mesi21),
 	[Noordeen Malango](https://github.com/i4seeu)
+
+### If you like this project don't forgot to support it by giving a :star: 
