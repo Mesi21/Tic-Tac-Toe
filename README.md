@@ -22,4 +22,4 @@ RULES FOR TIC-TAC-TOE - from (https://www.exploratorium.edu/brain_explorer/ticta
 	[Molnar Emese](https://github.com/Mesi21),
 	[Noordeen Malango](https://github.com/i4seeu)
 
-### If you like this project don't forgot to support it by giving a :star: 
+### If you like this project don't forget to support it by giving a :star: 
